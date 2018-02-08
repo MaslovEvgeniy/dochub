@@ -54,10 +54,10 @@
         <div class="navbar-collapse collapse" id="navbar-collapse">
             <nav role="navigation">
                 <ul class="menu nav navbar-nav secondary">
-                    <li class="first expanded"><a href="http://dochub.com.ua/uk/dochub-proekt">Про проект</a></li>
-                    <li class="leaf"><a href="http://dochub.com.ua/uk/parnery" title="">Події</a></li>
-                    <li class="leaf"><a href="http://dochub.com.ua/uk/kontakty" title="">Звіти</a></li>
-                    <li class="leaf"><a href="http://dochub.com.ua/uk/kontakty" title="">Контакти</a></li>
+                    <li class="first expanded"><a href="#">Про проект</a></li>
+                    <li class="leaf"><a href="#" title="">Події</a></li>
+                    <li class="leaf"><a href="#" title="">Звіти</a></li>
+                    <li class="leaf"><a href="#" title="">Контакти</a></li>
                 </ul>
             </nav>
         </div>
@@ -321,7 +321,7 @@
                     <div class="form-group">
                         <input type="email" class="form-control input-lg" id="exampleInputEmail2" placeholder="Введіть E-mail">
                     </div>
-                    <button type="submit" class="btn btn-warning btn-lg">Send invitation</button>
+                    <button type="submit" class="btn btn-warning btn-lg">Підписатись</button>
                 </form>
             </div>
         </div>
