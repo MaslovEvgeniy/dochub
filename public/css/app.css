@@ -1,0 +1,74 @@
+.menu li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.hneu {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.events .item {
+    margin: 0 15px;
+}
+
+.owl-prev {
+    font-size: 50px!important;
+    color: #000!important;
+    width: 15px;
+    position: absolute;
+    top: 35%;
+    left: -5%;
+    margin-left: -20px;
+    display: block!IMPORTANT;
+    background: transparent!important;
+}
+
+.owl-next {
+    font-size: 50px!important;
+    color: #000!important;
+    width: 15px;
+    position: absolute;
+    top: 35%;
+    right: -25px;
+    display: block!IMPORTANT;
+    background: transparent!important;
+}
+
+.event-mark {
+    margin-top: -270px;
+}
+
+.owl-dots {
+    display: none;
+}
+
+.reports .front-news-title p {
+    position: absolute;
+}
+
+.front-news-title > p {
+    margin-top: -450px;
+    display: block;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 40 !important;
+    color: #fff;
+    height: 450px;
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.jumbotron img {
+    margin-top: 70px;
+}
+
+.block-footer {
+    min-height: 0;
+}
