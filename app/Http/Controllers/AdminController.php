@@ -37,7 +37,7 @@ class AdminController extends Controller
     {
         $subscr = Subscr::all();
         $stats = Stats::all();
-        $visitors = $totalVis = News::all()->sum('visitors');
+        $visitors = News::all()->sum('visitors');
         return view('home', compact('subscr', 'stats', 'visitors'));
     }
 
