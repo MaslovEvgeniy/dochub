@@ -30,21 +30,6 @@
     <![endif]-->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113863633-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-113863633-1');
-    </script>
-
 
     <script>document.createElement("picture");</script>
 </head>
@@ -52,11 +37,14 @@
 <header id="navbar" role="banner" class="navbar container navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a href="http://www.hneu.edu.ua/">
-                <img src="https://upload.wikimedia.org/wikipedia/uk/0/03/Logo_KhNUE.jpg" alt="Hneu" class="hneu">
+            <a class="logo navbar-btn " href="/uk" title="Головна">
+                <img src="{{ asset('img/dochub.jpg') }}" alt="Головна"/>
             </a>
             <a class="logo navbar-btn " href="/uk" title="Головна">
-                <img src="http://dochub.com.ua/sites/default/files/final.jpg" alt="Головна"/>
+                <img src="{{ asset('img/evro.jpg') }}" alt="Головна"/>
+            </a>
+            <a href="http://www.hneu.edu.ua/">
+                <img src="https://upload.wikimedia.org/wikipedia/uk/0/03/Logo_KhNUE.jpg" alt="Hneu" class="hneu">
             </a>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
