@@ -78,7 +78,7 @@
 
             <div class="view-content">
                 <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
-                    <div id="hero" style="background: url('{{ asset('img/doc.jpg') }}') no-repeat center center;">
+                    <div id="hero" style="background: url(//dochub.com.ua/sites/default/files/unit-picture/14/books_shelfh_2.jpg) no-repeat top center;">
                         <div class="main_hero">
                             <h2>DocHub Project</h2>
                         </div>
@@ -151,10 +151,10 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="front-news-title">
+                                    <span class="front-news-title text-center" style="margin-top: 50px;">
                                         <p>
                                             {{ $report->name }}
-                                            <a href="#" class="detail pull-right">Детальніше</a>
+                                            <a href="#" class="detail" style="color:#F2DF7E;">Детальніше</a>
                                         </p>
                                     </span>
                                 </div>
