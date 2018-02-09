@@ -52,11 +52,11 @@
 <header id="navbar" role="banner" class="navbar container navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a class="logo navbar-btn pull-left" href="/uk" title="Головна">
-                <img src="http://dochub.com.ua/sites/default/files/final.jpg" alt="Головна"/>
-            </a>
             <a href="http://www.hneu.edu.ua/">
                 <img src="https://upload.wikimedia.org/wikipedia/uk/0/03/Logo_KhNUE.jpg" alt="Hneu" class="hneu">
+            </a>
+            <a class="logo navbar-btn " href="/uk" title="Головна">
+                <img src="http://dochub.com.ua/sites/default/files/final.jpg" alt="Головна"/>
             </a>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
