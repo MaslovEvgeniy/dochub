@@ -30,6 +30,22 @@
     <![endif]-->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113863633-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113863633-1');
+    </script>
+
+
     <script>document.createElement("picture");</script>
 </head>
 <body class="html front not-logged-in no-sidebars page-node i18n-uk">
@@ -54,10 +70,10 @@
         <div class="navbar-collapse collapse" id="navbar-collapse">
             <nav role="navigation">
                 <ul class="menu nav navbar-nav secondary">
-                    <li class="first expanded"><a href="#">Про проект</a></li>
-                    <li class="leaf"><a href="#" title="">Події</a></li>
-                    <li class="leaf"><a href="#" title="">Звіти</a></li>
-                    <li class="leaf"><a href="#" title="">Контакти</a></li>
+                    <li class="first expanded"><a href="#block-views-main-page-baner-block">Про проект</a></li>
+                    <li class="leaf"><a href="#news" title="">Події</a></li>
+                    <li class="leaf"><a href="#reports" title="">Звіти</a></li>
+                    <li class="leaf"><a href="#contact" title="">Контакти</a></li>
                 </ul>
             </nav>
         </div>
@@ -88,189 +104,76 @@
         </div>
     </section>
     <div class="container">
-        <section class="block">
+        <section class="block" id="news">
             <h2 class="text-center section-heading">Новини та події</h2>
             <div class="row">
                 <div class="events owl-carousel owl-theme">
-                    <div class="item">
-                        <div>
-                            <div class="newsfront">
-                                <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                    <img typeof="foaf:Image" class="img-responsive"
-                                         src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                         width="300" height="380" alt=""/>
-                                </a>
+                    @foreach($news as $report)
+                        <?php $file = File::exists(public_path("uploads/news/{$report->id}.jpg")) ? asset("/uploads/news/$report->id.jpg") : asset('img/no.jpg') ?>
+                        <div class="item" data-name="{{ $report->name }}"
+                             data-img="{{ $file }}"
+                             data-id="{{ $report->id }}"
+                             data-desc="{{ $report->desc }}"
+                             data-date="{{ \Carbon\Carbon::parse($report->date)->format('d.m.Y') }}"
+                             data-place="{{ $report->place }}"
+                        >
+                            <div>
+                                <div class="newsfront">
+                                    <a href="#">
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{ $file }}"
+                                                 style="width: 300px; height: 450px;" alt=""/>
+                                        </a>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div>
+                            <div>
                             <span class="front-news-title">
-                                <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">Звітна зустріч за 2017-2017 рік – перший рік проекту в Університеті Тампере
+                                <a href="#" class="detail">{{ $report->name }}
                                 </a>
                             </span>
-                        </div>
-                        <div>
-                            <div class="event-mark">Подія</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <div class="newsfront">
-                                <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                    <img typeof="foaf:Image" class="img-responsive"
-                                         src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                         width="300" height="380" alt=""/>
-                                </a>
+                            </div>
+                            <div>
+                                <div class="event-mark">Подія</div>
                             </div>
                         </div>
-                        <div>
-                    <span class="front-news-title">
-                        <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">Звітна зустріч за 2017-2017 рік – перший рік проекту в Університеті Тампере
-                        </a>
-                    </span>
-                        </div>
-                        <div>
-                            <div class="event-mark">Подія</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <div class="newsfront">
-                                <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                    <img typeof="foaf:Image" class="img-responsive"
-                                         src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                         width="300" height="380" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                        <div>
-                    <span class="front-news-title">
-                        <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">Звітна зустріч за 2017-2017 рік – перший рік проекту в Університеті Тампере
-                        </a>
-                    </span>
-                        </div>
-                        <div>
-                            <div class="event-mark">Подія</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <div class="newsfront">
-                                <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                    <img typeof="foaf:Image" class="img-responsive"
-                                         src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                         width="300" height="380" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                        <div>
-                    <span class="front-news-title">
-                        <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">Звітна зустріч за 2017-2017 рік – перший рік проекту в Університеті Тампере
-                        </a>
-                    </span>
-                        </div>
-                        <div>
-                            <div class="event-mark">Event</div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
 
         <hr style="margin-top: 50px;">
 
-        <section class="block">
+        <section class="block" id="reports">
             <div class="container">
                 <h2 class="text-center section-heading">Звіти</h2>
                 <div class="row">
                     <div class="events owl-carousel owl-theme">
-                        <div class="item">
-                            <div>
-                                <div class="newsfront">
-                                    <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                        <img typeof="foaf:Image" class="img-responsive"
-                                             src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                             width="300" height="380" alt=""/>
-                                    </a>
+                        @foreach($reports as $report)
+                            <?php $file = File::exists(public_path("uploads/reports/{$report->id}.jpg")) ? asset("/uploads/reports/$report->id.jpg") : asset('img/no.jpg') ?>
+                            <div class="item" data-name="{{ $report->name }}"
+                                 data-img="{{ $file }}"
+                                 data-desc="{{ $report->desc }}"
+                                 data-date="{{ \Carbon\Carbon::parse($report->date)->format('d.m.Y') }}"
+                            >
+                                <div>
+                                    <div class="newsfront">
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{ $file }}"
+                                                 style="width: 300px; height: 450px;" alt=""/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="front-news-title">
+                                        <p>
+                                            {{ $report->name }}
+                                            <a href="#" class="detail pull-right">Детальніше</a>
+                                        </p>
+                                    </span>
                                 </div>
                             </div>
-                            <div>
-                                <span class="front-news-title">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deleniti et exercitationem fuga,
-                                        mollitia odit perspiciatis provident tempore totam? Eaque, earum eos error nisi obcaecati quasi recusandae totam velit voluptatibus.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem blanditiis consequuntur cum deleniti dicta dolore ea,
-                                        eligendi eum ex facilis id inventore twefs necessitatibus nostrum perspiciatis, ratione saepe ullam voluptatem.
-                                        <a href="#" class="pull-right">Детальніше</a>
-                                    </p>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div>
-                                <div class="newsfront">
-                                    <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                        <img typeof="foaf:Image" class="img-responsive"
-                                             src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                             width="300" height="380" alt=""/>
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="front-news-title">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deleniti et exercitationem fuga,
-                                        mollitia odit perspiciatis provident tempore totam? Eaque, earum eos error nisi obcaecati quasi recusandae totam velit voluptatibus.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem blanditiis consequuntur cum deleniti dicta dolore ea,
-                                        eligendi eum ex facilis id inventore twefs necessitatibus nostrum perspiciatis, ratione saepe ullam voluptatem.
-                                        <a href="#" class="pull-right">Детальніше</a>
-                                    </p>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div>
-                                <div class="newsfront">
-                                    <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                        <img typeof="foaf:Image" class="img-responsive"
-                                             src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                             width="300" height="380" alt=""/>
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="front-news-title">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deleniti et exercitationem fuga,
-                                        mollitia odit perspiciatis provident tempore totam? Eaque, earum eos error nisi obcaecati quasi recusandae totam velit voluptatibus.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem blanditiis consequuntur cum deleniti dicta dolore ea,
-                                        eligendi eum ex facilis id inventore twefs necessitatibus nostrum perspiciatis, ratione saepe ullam voluptatem.
-                                        <a href="#" class="pull-right">Детальніше</a>
-                                    </p>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div>
-                                <div class="newsfront">
-                                    <a href="/uk/events/2017/zvitna-zustrich-za-2017-2017-rik-pershyy-rik-proektu-v-universyteti-tampere">
-                                        <img typeof="foaf:Image" class="img-responsive"
-                                             src="http://dochub.com.ua/sites/default/files/styles/news_block/public/events/2017/12/Illustrations/tampere_photo.png?itok=62fD8cse"
-                                             width="300" height="380" alt=""/>
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="front-news-title">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deleniti et exercitationem fuga,
-                                        mollitia odit perspiciatis provident tempore totam? Eaque, earum eos error nisi obcaecati quasi recusandae totam velit voluptatibus.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem blanditiis consequuntur cum deleniti dicta dolore ea,
-                                        eligendi eum ex facilis id inventore twefs necessitatibus nostrum perspiciatis, ratione saepe ullam voluptatem.
-                                        <a href="#" class="pull-right">Детальніше</a>
-                                    </p>
-                                </span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -278,33 +181,28 @@
 
         <hr style="margin: 50px 0;">
 
-        <section>
+        <section style="display: none;" id="content">
             <div class="jumbotron">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="img-responsive">
-                            <img src="https://specials-images.forbesimg.com/imageserve/59d552c74bbe6f37dd9fff97/416x416.jpg?background=000000&cropX1=0&cropX2=2259&cropY1=103&cropY2=2362" class="img-responsive" alt="">
-
+                            <img src="/img" class="img-responsive" alt="">
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <h2 class="text-center">Заголовок</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Accusantium amet architecto atque distinctio, dolor doloremque doloribus excepturi expedita
-                            explicabo facilis fuga
-                            inventore non rem rerum sapiente similique sint unde, voluptatum!
-                            Aliquam, consequatur eos facere laborum nemo numquam quos rem sapiente sed totam, vero
-                            voluptate. Alias animi aperiam assumenda delectus eaque, expedita, hic ipsum nihil officia
-                            ratione sed ullam. Omnis, repellat!
-                            Asperiores autem beatae blanditiis consequatur doloremque ducimus eos harum illo inventore ipsa, iste, minima natus
-                                necessitatibus officiis quae quaerat quis quisquam quo reiciendis repellat rerum similique tempore tenetur unde, voluptates.
+                        <h2 class="text-center heading">Заголовок</h2>
+                        <p class="content">
                         </p>
                     </div>
                 </div>
-                <i class="fa fa-calendar" style="font-size: 35px; margin-top: 10px;"><h3 style="display: inline-block; margin-left: 10px;">02.02.2018</h3></i><br>
-                <i class="fa fa-map-marker" style="font-size: 35px; margin-top: 5px; margin-left: 6px; margin-right: 10px;"><h3 style="display: inline-block; margin-left: 10px;">   м. Харків, вул. Науки 9А</h3></i>
+                <i class="fa fa-calendar" style="font-size: 35px; margin-top: 10px;"><h3 class="date" style="display: inline-block; margin-left: 10px;">
+                        02.02.2018</h3></i><br>
+                <i class="fa fa-map-marker place"
+                   style="font-size: 35px; margin-top: 5px; margin-left: 6px; margin-right: 10px;">
+                    <h3 style="display: inline-block; margin-left: 10px;"></h3>
+                </i>
                 <div class="text-center">
-                    <button class="btn btn-success btn-lg">Я прийду!</button>
+                    <button class="btn btn-success btn-lg" data-id="0" id="come">Я прийду!</button>
                 </div>
             </div>
         </section>
@@ -315,11 +213,12 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="text-center">
-                <h1>Вже <strong>3121</strong> людей беруть участь у наших івентах</h1>
+                <h1>Вже <strong id="comes">{{ $totalVis }}</strong> людей беруть участь у наших івентах</h1>
                 <h3>Підпишись, щоб першим дізнатися про них</h3>
-                <form class="form-inline" style="margin: 30px 0;">
+                <form class="form-inline" style="margin: 30px 0;" id="subscribe">
                     <div class="form-group">
-                        <input type="email" class="form-control input-lg" id="exampleInputEmail2" placeholder="Введіть E-mail">
+                        <input type="email" name="email" class="form-control input-lg" id="exampleInputEmail2"
+                               placeholder="Введіть E-mail" required>
                     </div>
                     <button type="submit" class="btn btn-warning btn-lg">Підписатись</button>
                 </form>
@@ -328,32 +227,8 @@
     </div>
 </div>
 
-<div class="main-container container">
-
-    <header role="banner" id="page-header">
-
-    </header> <!-- /#page-header -->
-
-    <div class="row">
-
-
-        <section class="col-sm-12">
-            <a id="main-content"></a>
-            <h1 class="page-header">Welcome to DocHubs</h1>
-            <div class="region region-content">
-                <section id="block-system-main" class="block block-system clearfix">
-
-
-                    <div id="first-time"><p>No front page content has been created yet.</p></div>
-                </section>
-            </div>
-        </section>
-
-
-    </div>
-</div>
 <div class="block-footer">
-    <footer class="footer container">
+    <footer class="footer container" id="contact">
         <div class="region region-footer">
             <section id="block-block-4" class="block block-block clearfix">
                 <div class="text-center">
@@ -370,5 +245,71 @@
 <script src="http://dochub.com.ua/sites/all/modules/picture/picturefill2/picturefill.min.js?v=2.3.1"></script>
 <script src="http://dochub.com.ua/sites/all/modules/picture/picture.min.js?v=7.56"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var subscr = '{{ route('subscribe') }}';
+    var come = '{{ route('come') }}';
+    $(document).ready(function () {
+        $('.detail').on('click', function (e) {
+            e.preventDefault();
+
+            var $item = $(this).closest('.item');
+            var $jumb = $('.jumbotron');
+
+            $jumb.find('img').attr('src', $item.data('img'));
+            $jumb.find('.heading').html($item.data('name'));
+            $jumb.find('.content').html($item.data('desc'));
+            $jumb.find('.date').html($item.data('date'));
+
+            if ($item.data('place')) {
+                $jumb.find('.place h3').html($item.data('place'));
+                $jumb.find('.place').show();
+                $jumb.find('.btn').data('id', $item.data('id'));
+                $jumb.find('.btn').show();
+            } else {
+                $jumb.find('.place').hide();
+                $jumb.find('.btn').hide();
+            }
+
+            $jumb.closest('section').show();
+
+            $('html, body').animate({
+                scrollTop: $("#content").offset().top
+            }, 1000);
+        });
+
+        $('#subscribe').on('submit', function (e) {
+            e.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                url: subscr,
+                dataType: 'json',
+                method: 'GET',
+                data: form.serialize()
+            }).done(function () {
+                swal('Ви успішно підписалися!');
+                form[0].reset();
+            });
+        });
+
+        $('#come').on('click', function (e) {
+            var btn = $(this);
+            var id = $(this).data('id');
+
+            $.ajax({
+                url: come + '/?id=' + id,
+                dataType: 'json',
+                method: 'GET',
+            }).done(function () {
+                swal('Чекаємо на Вас!');
+                var comes = $('#comes');
+                var c = +comes.html();
+                comes.html(++c);
+                btn.hide();
+            });
+        });
+    });
+</script>
 </body>
 </html>

@@ -72,3 +72,7 @@
 .block-footer {
     min-height: 0;
 }
+
+.newsfront:before {
+    width: 100%;
+}
