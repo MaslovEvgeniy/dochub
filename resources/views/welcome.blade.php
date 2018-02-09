@@ -79,10 +79,8 @@
             <div class="view-content">
                 <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
                     <div id="hero" style="background: url('{{ asset('img/doc.jpg') }}') no-repeat center center;">
-                        <div class="container">
-                            <h3 class="text-right">
-                                <div style="color: red;">Lorem ipsum dolor sit amet</div>
-                            </h3>
+                        <div class="main_hero">
+                            <h2>DocHub Project</h2>
                         </div>
                     </div>
                 </div>
@@ -110,7 +108,7 @@
                                     <a href="#">
                                         <a href="#">
                                             <img class="img-responsive" src="{{ $file }}"
-                                                 style="width: 300px; height: 450px;" alt=""/>
+                                                 style="height: 450px;" alt=""/>
                                         </a>
                                     </a>
                                 </div>
@@ -148,7 +146,7 @@
                                     <div class="newsfront">
                                         <a href="#">
                                             <img class="img-responsive" src="{{ $file }}"
-                                                 style="width: 300px; height: 450px;" alt=""/>
+                                                 style="height: 450px;" alt=""/>
                                         </a>
                                     </div>
                                 </div>

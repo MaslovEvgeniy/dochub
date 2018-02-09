@@ -2,6 +2,10 @@
     margin-right: 40px;
 }
 
+.menu li:hover {
+    font-weight: bold;
+}
+
 .hneu {
     width: 80px;
     height: 80px;
